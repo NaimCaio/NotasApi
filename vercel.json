@@ -1,15 +1,19 @@
 {
+    "name": "api",
     "version": 2,
-    "builds": [
-      {
-        "src": "server/server.ts",
+    "public": true,
+    "build": {
+        "src": "server/server.js",
         "use": "@vercel/node"
-      }
-    ],
+    },
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "server/server.ts"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "routes/notaRoute.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "routes/userRoute.js"
+        }
     ]
-  }
+}
